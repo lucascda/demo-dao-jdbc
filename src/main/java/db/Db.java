@@ -19,7 +19,7 @@ public class Db {
             } catch (SQLException e) {
                 throw new DbException(e.getMessage());
             }
-           
+            
         }
         return conn;       
 
@@ -45,7 +45,7 @@ public class Db {
         }
         
     }
-    // TODO: closeConnection()
+    
     // TODO: closeStatement()
     // TODO: closeResultSet()
     
