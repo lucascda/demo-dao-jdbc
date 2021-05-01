@@ -1,8 +1,8 @@
 package com.example;
 
-import java.sql.Connection;
-
-import db.Db;
+import model.dao.DaoFactory;
+import model.dao.SellerDao;
+import model.entities.Seller;
 
 /**
  * Hello world!
@@ -12,7 +12,10 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println("Hello World!");
+        SellerDao sellerDao = DaoFactory.createSellerDao();
+		System.out.println("=== TEST 1: seller findbyId ===");
+		Seller seller = sellerDao.findById(3);
+		System.out.println(seller);
         
        
     }
