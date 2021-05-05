@@ -25,6 +25,10 @@ public class App2 {
         System.out.println("Update Completed!");
         dep = depDao.findById(3);
         System.out.println(dep);
+        System.out.println("\n=== TEST 4: department insert ===");
+        Department newDep = new Department(null, "Babies");
+        depDao.insert(newDep);
+        System.out.println(newDep);
     }
     
 }
