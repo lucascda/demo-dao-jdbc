@@ -1,6 +1,6 @@
 package com.example;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import model.dao.DaoFactory;
@@ -18,6 +18,13 @@ public class App2 {
         for(Department item : depList){
             System.out.println(item);
         }
+        System.out.println("=== TEST 3: department Update ===");
+        dep = depDao.findById(3);
+        dep.setName("Furniture");
+        depDao.update(dep);
+        System.out.println("Update Completed!");
+        dep = depDao.findById(3);
+        System.out.println(dep);
     }
     
 }
