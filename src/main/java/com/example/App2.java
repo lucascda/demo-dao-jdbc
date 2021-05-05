@@ -2,6 +2,7 @@ package com.example;
 
 
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
@@ -9,6 +10,7 @@ import model.entities.Department;
 
 public class App2 {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         DepartmentDao depDao = DaoFactory.createDepartmentDao();
         System.out.println("=== TEST 1: department findById ===");
         Department dep = depDao.findById(2);
@@ -29,6 +31,12 @@ public class App2 {
         Department newDep = new Department(null, "Babies");
         depDao.insert(newDep);
         System.out.println(newDep);
+        System.out.println("\n=== TEST 5: department delete ===");
+        System.out.println("Enter id for delete test: ");
+        int id = sc.nextInt();
+        depDao.deleteById(id);
+        System.out.println("Delete completed");
+        sc.close();
     }
     
 }
